@@ -1,0 +1,51 @@
+@import '../../common/css/mixins.scss';
+
+.header{
+	height: 900px;
+	background: url('../../images/bg.png') center no-repeat;
+
+	.top{
+		padding-top: 20px;
+		@include flex;
+
+		.header-nav{
+			height: 100%;
+			margin-bottom: 0;
+			color: #fff;
+			@include flex;
+
+			.header-nav-item{
+				margin-left: 25px;
+			}
+		}
+	}
+
+	.logo{
+		text-align: center;
+		margin-top: 180px;
+	}
+
+	.platform{
+		font-size: 24px;
+		color: #fff;
+		margin-top: 40px;
+		text-align: center;
+	}
+}
+
+.alliance-chain{
+	overflow: hidden;
+	height: 570px;
+	background-color: #111111;
+	color: #fff;
+
+	.title{
+		margin: 80px 0 90px 0; 
+		color: #fff;
+		font-size: 24px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+}
+
