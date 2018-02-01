@@ -4,6 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 function resolve(dir) {
 	return path.resolve(__dirname, dir);
 }
+console.log(process.env.NODE_ENV)
 
 module.exports = {
 	entry: {
@@ -19,7 +20,8 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'static/js/[name].[hash].js'
+		filename: 'static/js/[name].[hash].js',
+		publicPath: process.env.NODE_ENV === 'production' ? "/" : ""
 	},
 	resolve: {
 		alias: {

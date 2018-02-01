@@ -54,16 +54,6 @@ module.exports = merge(baseWebpackConfig, {
                 collapseWhitespace: false,
             },
         }),
-        new CleanWebpackPlugin(
-            ['dist'], 　 //匹配删除的文件
-            {
-                root: __dirname,
-                　　　　　　　　　　 //根目录
-                verbose: true,
-                　　　　　　　　　　 //开启在控制台输出信息
-                dry: false　　　　　　　　　　 //启用删除文件
-            }
-        ),
         //热更新
         new webpack.HotModuleReplacementPlugin(),
     ]
