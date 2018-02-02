@@ -47,8 +47,9 @@ class Header extends Component {
                     <Col className="top" span={16}>
                         <img src={Headerlogo} alt="logo" />
                         <ul className="header-nav">
-                            <li className="header-nav-item" href="#components-anchor-demo-basic" title="Basic demo">数字资产</li>
-                            <li className="header-nav-item" href="#components-anchor-demo-fixed" title="Fixed demo">联系我们</li>
+        <li className="header-nav-item" title="Whitepaper"><a href="/static/URT-Whitepaper-1.0.pdf">白皮书</a></li>
+                            <li className="header-nav-item" title="Digital Assets"><a href="#assets">数字资产</a></li>
+                            <li className="header-nav-item" title="Contact"><a href="#contact">联系我们</a></li>
                         </ul>
                     </Col>
                 </Row>

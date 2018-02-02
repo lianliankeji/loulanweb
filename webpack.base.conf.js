@@ -29,7 +29,10 @@ module.exports = {
 			'containers': resolve('src/containers/'),
 			'common': resolve('src/common/'),
 			'actions': resolve('src/actions/'),
-			'images': resolve('src/images/')
+			'images': resolve('src/images/'),
+			'api': resolve('src/api/'),
+			'constants': resolve('src/constants/'),
+			'utils': resolve('src/utils/')
 		},
 		extensions: ['.js', '.jsx', '.less', '.scss', '.css'],
 	},

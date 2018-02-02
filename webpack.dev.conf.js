@@ -46,8 +46,10 @@ module.exports = merge(baseWebpackConfig, {
             }
         }),
         new htmlWebpackPlugin({
+            title: "楼兰loulanchain",
             filename: 'index.html',
-            // favicon:'src/images/logo_artist.ico',
+            hash: true,
+            favicon: 'src/images/favicon.ico',
             template: path.resolve(__dirname, 'index.html'),
             minify: {
                 removeComments: true,

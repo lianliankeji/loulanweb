@@ -7,11 +7,11 @@ import axios from '../api/axios.js'
 export function login(data) {
 	return function(dispatch) {
 		axios({
-				method: 'post',
-				url: 'http://127.0.0.1:5000/exchange/exchange/save',
+				method: 'get',
+				url: 'https://store.lianlianchains.com/kd/query?func=getInfoForWeb&ccId=&usr=centerBank&acc=centerBank',
 			}, {
-				firstName: 'Fred',
-				lastName: 'Flintstone'
+			/*firstName: 'Fred',
+			lastName: 'Flintstone'*/
 			}).then(function(response) {
 				console.log(response);
 				setTimeout(() => {

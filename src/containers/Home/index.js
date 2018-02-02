@@ -6,10 +6,16 @@ import {
 import {
     bindActionCreators
 } from 'redux'
-import * as userinfoActions from 'actions/userinfo.js'
+import {
+    timeFormat
+} from 'utils/date.js'
+import {
+    getHomesData
+} from 'actions/Home/getHomeData.js'
 
 import {
-    Anchor,
+    BackTop,
+    Popover,
     Row,
     Col,
     Progress
@@ -40,11 +46,11 @@ class Home extends React.Component {
             }, {
                 img: SafeLogo,
                 charac: "安全",
-                descList: ["ECDSA数字证书", "决策委员会多重签名", "手机二次验证"]
+                descList: ["手机二次验证", "ECDSA数字证书", "决策委员会多重签名"]
             }, {
                 img: EcologyLogo,
                 charac: "生态",
-                descList: ["零售行业互链互通", "零售供应链金融数字贸易", "数字资产钱包"]
+                descList: ["数字资产钱包", "零售行业互链互通", "零售供应链金融数字贸易"]
             }]
         };
     }
@@ -52,7 +58,6 @@ class Home extends React.Component {
     login = () => {
         let loginState = this.props.userinfo.login;
 
-        console.log(loginState)
 
         if (loginState) {
             this.props.userinfoActions.logout({
@@ -65,21 +70,82 @@ class Home extends React.Component {
         }
     }
 
+    getTableColumns = () => {
+        const columns = [{
+            title: '节点',
+            dataIndex: 'node',
+            key: 'node'
+        }, {
+            title: '交易',
+            dataIndex: 'txid',
+            key: 'txid',
+        }, {
+            title: '交易信息',
+            dataIndex: 'txInfo',
+            key: 'txInfo',
+            render: (text, row, index) => {
+
+                return (
+                    <Popover placement="top" title={"交易信息"} content={text} trigger="hover">
+                        <span>{text.substr(0,50)}</span>
+                    </Popover>
+                );
+            },
+        }, {
+            title: '所属区块',
+            dataIndex: 'block',
+            key: 'block',
+        }, {
+            title: '时间',
+            dataIndex: 'seconds',
+            key: 'seconds',
+            render: (text, row, index) => {
+                return timeFormat(text);
+            }
+        }];
+
+        return columns;
+
+    }
+
+    getTableData = () => {
+        const data = this.props.homesData.txRecords;
+
+        data.map((item, index) => {
+            return item.key = JSON.stringify(index);
+        })
+
+
+        return data;
+
+    }
+
     componentWillMount() {
+        this.props.getHomesData();
         // var oRoot = document.getElementById('root');
-        // var socket = io.connect("http://123.207.144.58:8588");
-        // socket.on("chainDataUpdt",function(data) {
-        // 	console.log(data);
-        // 	// oRoot.innerText = data.hello;
-        // 	// socket.emit("client", {my: "data"})
+        // var socket = io.connect("https://store.lianlianchains.com");
+        // socket.on("chainDataUpdt", function(data) {
+        //     console.log(data);
+        //     // oRoot.innerText = data.hello;
+        //     // socket.emit("client", {my: "data"})
         // });
+    }
+
+    componentDidMount() {
+
     }
 
     render() {
 
+        const percent = Number((this.props.homesData.issuedAmt / this.props.homesData.totalAmt) * 100).toFixed(0) + "%";
+
+        const nowURTStyle = {
+            marginLeft: percent
+        }
+
         return (
             <div>
-				<Header login={this.props.userinfo.login} logFn={this.login} />
+				<Header />
 				<section className="alliance-chain">
                     <header className="title">国内首条新零售业务联盟链</header>
                     <Row type="flex" justify="center">
@@ -111,46 +177,55 @@ class Home extends React.Component {
                         </Col>
                     </Row>
                 </section>
-                <section className="assets">
+                <section id="assets" className="assets">
                     <Row type="flex" justify="center">
                         <Col className="assetslogo" span={5}>
                             <img className="pulse" src={Assetslogo} />
                         </Col>
                         <Col className="assets-info" span={11}>
+
                             <div>
                                 <div className="assets-info-top">
                                     <h1 className="title">数字资产</h1>
-                                    <div className="during">201809 ~ 201812</div>
+                                    <div className="during">{`${this.props.homesData.issueBeg} ~ ${this.props.homesData.issueEnd}`}</div>
                                 </div>
-                                <Progress className="progress" percent={50} status="active" />
+                                <Progress className="progress" percent={Number((this.props.homesData.issuedAmt /this.props.homesData.totalAmt)*100).toFixed(0) - 0} status="active" />
+                                <div className="URT">
+                                    <span>{this.props.homesData.issuedAmt} URT</span>
+                                    <span>{this.props.homesData.totalAmt} URT</span>
+                                </div>
                                 <div className="assets-data">
                                     <div className="assets-data-item">
                                         <img className="img" src={Block} />
                                         <div>
                                             <h3 className="title">最新区块</h3>
-                                            <div className="data">#65451321332</div>
+                                            <div className="data">#{this.props.homesData.latestBlock}</div>
                                         </div>
                                     </div>
                                     <div className="assets-data-item">
                                         <img className="img" src={Nodes} />
                                         <div>
                                             <h3 className="title">节点数</h3>
-                                            <div className="data">451321332</div>
+                                            <div className="data">{`${this.props.homesData.nodesCnt} / ${this.props.homesData.accountCnt}`}</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </Col>
                     </Row>
                 </section>
                 <section className="tables">
                     <Row className="tables-content" type="flex" align="middle" justify="center">
                         <Col span={16}>
-                            <Tables />
+        <Tables columns={this.getTableColumns()} dataSourece={this.getTableData()} />
                         </Col>
                     </Row>
                 </section>
 				<Footer />
+                <BackTop>
+                  <div className="ant-back-top-inner">UP</div>
+                </BackTop>
 				{/* <Loading /> */}
 			</div>
 
@@ -160,13 +235,13 @@ class Home extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        userinfo: state.userinfo
+        homesData: state.homesData
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        userinfoActions: bindActionCreators(userinfoActions, dispatch)
+        getHomesData: bindActionCreators(getHomesData, dispatch)
     }
 }
 

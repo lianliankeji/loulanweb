@@ -59,7 +59,7 @@ function successState(res) {
 const httpServer = (opts, data) => {
 
   let Public = { //公共参数  
-    'srAppid': ""
+    // 'srAppid': ""
   }
 
   console.log(data)

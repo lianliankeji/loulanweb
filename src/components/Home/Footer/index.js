@@ -22,7 +22,7 @@ export default class Footer extends React.Component {
 
     render() {
         return (
-            <footer className="home-footer">
+            <footer id="contact" className="home-footer">
                 <Row type="flex" justify="center">
                     <Col span={16}>
                         <div className="top">
@@ -38,7 +38,7 @@ export default class Footer extends React.Component {
                                 <h3 className="title">联系我们</h3>
                                 <div className="contact">
                                     <div className="tel">
-                                        <label>电话：</label><span>15801234157</span>
+                                        <label>电话：</label><span>(010) 8587 5500-8617</span>
                                     </div>
                                     <div className="wechat">
                                         <label>微信：</label><span>madouer1984</span>

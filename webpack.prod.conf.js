@@ -35,9 +35,12 @@ module.exports = merge(baseWebpackConfig, {
             sourceMap: true
         }),
         new htmlWebpackPlugin({
+            title: "楼兰loulanchains",
             filename: config.build.index,
             template: 'index.html',
             inject: true,
+            hash: true,
+            favicon: 'src/images/favicon.ico',
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
