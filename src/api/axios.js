@@ -62,7 +62,6 @@ const httpServer = (opts, data) => {
     // 'srAppid': ""
   }
 
-  console.log(data)
 
   let httpDefaultOpts = { //http默认配置  
     method: opts.method,

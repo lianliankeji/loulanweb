@@ -11,7 +11,6 @@ var timers = (dispatch) => {
 			/*firstName: 'Fred',
 			lastName: 'Flintstone'*/
 		}).then(function(response) {
-			console.log(response);
 			dispatch({
 				type: actionTypes.GET_HOME_DATA,
 				result: response.data.result
@@ -22,7 +21,7 @@ var timers = (dispatch) => {
 			console.log(error);
 			clearInterval(timers)
 		});
-	}, 10000);
+	}, 5000);
 }
 
 
@@ -38,7 +37,6 @@ export const getHomesData = (data) => {
 				/*firstName: 'Fred',
 				lastName: 'Flintstone'*/
 			}).then((response) => {
-				console.log(response);
 				dispatch({
 					type: actionTypes.GET_HOME_DATA,
 					result: response.data.result

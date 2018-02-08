@@ -50,7 +50,7 @@ class Home extends React.Component {
             }, {
                 img: EcologyLogo,
                 charac: "生态",
-                descList: ["数字资产钱包", "零售行业互链互通", "零售供应链金融数字贸易"]
+                descList: ["零售行业互链互通", "零售供应链金融数字贸易"]
             }]
         };
     }
@@ -80,7 +80,7 @@ class Home extends React.Component {
             dataIndex: 'txid',
             key: 'txid',
         }, {
-            title: '交易信息',
+            title: '信息',
             dataIndex: 'txInfo',
             key: 'txInfo',
             render: (text, row, index) => {
@@ -92,7 +92,7 @@ class Home extends React.Component {
                 );
             },
         }, {
-            title: '所属区块',
+            title: '区块',
             dataIndex: 'block',
             key: 'block',
         }, {
@@ -186,14 +186,14 @@ class Home extends React.Component {
 
                             <div>
                                 <div className="assets-info-top">
-                                    <h1 className="title">数字资产</h1>
-                                    <div className="during">{`${this.props.homesData.issueBeg} ~ ${this.props.homesData.issueEnd}`}</div>
+                                    <h1 className="title">联盟链</h1>
+                                    {/*<div className="during">{`${this.props.homesData.issueBeg} ~ ${this.props.homesData.issueEnd}`}</div>*/}
                                 </div>
-                                <Progress className="progress" percent={Number((this.props.homesData.issuedAmt /this.props.homesData.totalAmt)*100).toFixed(0) - 0} status="active" />
+                                {/*<Progress className="progress" percent={Number((this.props.homesData.circulateAmt /this.props.homesData.totalAmt)*100).toFixed(0) - 0} status="active" />
                                 <div className="URT">
-                                    <span>{this.props.homesData.issuedAmt} URT</span>
+                                    <span>{this.props.homesData.circulateAmt} URT</span>
                                     <span>{this.props.homesData.totalAmt} URT</span>
-                                </div>
+                                </div>*/}
                                 <div className="assets-data">
                                     <div className="assets-data-item">
                                         <img className="img" src={Block} />

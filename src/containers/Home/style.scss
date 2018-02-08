@@ -42,6 +42,7 @@
 
 }
 
+
 // 资产
 .assets{
 	height: 679px;
@@ -52,6 +53,14 @@
 	.assetslogo{
 		margin-top: 165px;
 		padding-left: 40px;
+
+		@media screen and (max-width: 1400px) {
+    		.pulse {
+				width: 151px;
+				height: 141px;
+			}
+		}
+		
 	}
 
 	.assets-info{
@@ -84,7 +93,6 @@
 		.URT{
 			@include flex;
 			margin-top: 10px;
-			padding-right: 30px;
 		}
 
 		.assets-data{
@@ -102,6 +110,7 @@
 					font-size: 18px;
 					color: #fff;
 					margin-bottom: 10px;
+					text-align:center;
 				}
 
 				.data{

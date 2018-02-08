@@ -29,9 +29,9 @@ export default class Footer extends React.Component {
                             <div className="item">
                                 <h3 className="title">合作企业</h3>
                                 <div className="Cooperative">
-                                    <img src={Aiyi} />
-                                    <img className="wensli" src={Wensli} />
-                                    <img src={Xinhua} />
+                                    <img className="img" src={Aiyi} />
+                                    <img className="wensli img" src={Wensli} />
+                                    <img className="img" src={Xinhua} />
                                 </div>
                             </div>
                             <div className="item">
@@ -41,7 +41,7 @@ export default class Footer extends React.Component {
                                         <label>电话：</label><span>(010) 8587 5500-8617</span>
                                     </div>
                                     <div className="wechat">
-                                        <label>微信：</label><span>madouer1984</span>
+                                        {/*<label>微信：</label><span>madouer1984</span>*/}
                                     </div>
                                 </div>
                             </div>

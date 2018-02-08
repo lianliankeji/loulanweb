@@ -37,6 +37,14 @@
                 .wensli{
                     margin: 0 15px;
                 }
+
+                .img{
+                    display:inline-block;
+                    @media screen and (max-width: 1400px) {
+                        width: 87px;
+                        height: 24px;
+                    }
+                }
             }
 
             .contact{

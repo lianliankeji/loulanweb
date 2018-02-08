@@ -46,7 +46,7 @@ module.exports = merge(baseWebpackConfig, {
             }
         }),
         new htmlWebpackPlugin({
-            title: "楼兰loulanchain",
+            title: "楼兰loulanchains",
             filename: 'index.html',
             hash: true,
             favicon: 'src/images/favicon.ico',

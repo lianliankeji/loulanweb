@@ -46,11 +46,19 @@ class Header extends Component {
                 <Row type="flex" justify="center">
                     <Col className="top" span={16}>
                         <img src={Headerlogo} alt="logo" />
-                        <ul className="header-nav">
-        <li className="header-nav-item" title="Whitepaper"><a href="/static/URT-Whitepaper-1.0.pdf">白皮书</a></li>
-                            <li className="header-nav-item" title="Digital Assets"><a href="#assets">数字资产</a></li>
-                            <li className="header-nav-item" title="Contact"><a href="#contact">联系我们</a></li>
-                        </ul>
+                        {
+                            window.screen.width < 768 ?
+                            
+                            "移动端"
+                            :
+                            <ul className="header-nav">
+                                <li className="header-nav-item" title="Whitepaper"><a href="/static/URT-Whitepaper.pdf">白皮书</a></li>
+                                <li className="header-nav-item" title="Digital Assets"><a href="#assets">联盟链</a></li>
+                                <li className="header-nav-item" title="Contact"><a href="#contact">联系我们</a></li>
+                            </ul>
+                        }
+
+                        
                     </Col>
                 </Row>
                 <div className="logo">
@@ -59,7 +67,7 @@ class Header extends Component {
                 {/* <div onClick={this.toggleLogin}>
                         {this.props.login ? "登录" : "退出"}
                     </div> */}
-                <p className="platform">统一零售数字贸易平台与价值交换网络</p>
+                <p className="platform">统一零售贸易平台与价值交换网络</p>
 
             </header>
 
