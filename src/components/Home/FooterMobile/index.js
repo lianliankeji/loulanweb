@@ -23,14 +23,14 @@ export default class FooterMobile extends React.Component {
     render() {
         return (
             <footer id="contact" className="home-footer-mobile">
-                <section className="item Cooperative">
+                {/*<section className="item Cooperative">
                     <h3 className="title">合作企业</h3>
                     <div className="logo">
                         <img className="img" src={Aiyi} />
                         <img className="wensli img" src={Wensli} />
                         <img className="img" src={Xinhua} />
                     </div>
-                </section>
+                </section>*/}
                 <div className="line"></div>
                 <section className="item Contact">
                     <h3 className="title">联系我们</h3>

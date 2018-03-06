@@ -9,9 +9,13 @@ import {
     Col,
     Progress
 } from 'antd';
-const {
-    Link
-} = Anchor;
+import {
+    BrowserRouter,
+    Route,
+    Link,
+    Redirect,
+    Switch
+} from 'react-router-dom'
 
 import './style.scss';
 
@@ -51,11 +55,16 @@ class Header extends Component {
                             
                             "移动端"
                             :
-                            <ul className="header-nav">
-                                <li className="header-nav-item" title="Whitepaper"><a href="/static/URT-Whitepaper.pdf">白皮书</a></li>
-                                <li className="header-nav-item" title="Digital Assets"><a href="#assets">联盟链</a></li>
-                                <li className="header-nav-item" title="Contact"><a href="#contact">联系我们</a></li>
-                            </ul>
+                            <BrowserRouter>
+                                <ul className="header-nav">
+                                    <li><Link to="/platform">
+                                        开放平台
+                                    </Link></li>
+                                    <li className="header-nav-item" title="Whitepaper"><a href="/static/URT-Whitepaper.pdf">白皮书</a></li>
+                                    <li className="header-nav-item" title="Digital Assets"><a href="#assets">联盟链</a></li>
+                                    <li className="header-nav-item" title="Contact"><a href="#contact">联系我们</a></li>
+                                </ul>
+                            </BrowserRouter>
                         }
 
                         

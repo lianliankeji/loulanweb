@@ -26,14 +26,14 @@ export default class Footer extends React.Component {
                 <Row type="flex" justify="center">
                     <Col span={16}>
                         <div className="top">
-                            <div className="item">
+                            {/*<div className="item">
                                 <h3 className="title">合作企业</h3>
                                 <div className="Cooperative">
                                     <img className="img" src={Aiyi} />
                                     <img className="wensli img" src={Wensli} />
                                     <img className="img" src={Xinhua} />
                                 </div>
-                            </div>
+                            </div>*/}
                             <div className="item">
                                 <h3 className="title">联系我们</h3>
                                 <div className="contact">
