@@ -10,10 +10,11 @@ import {
     timeFormat
 } from 'utils/date.js'
 import {
-    getHomesData
-} from 'actions/Home/getHomeData.js'
+    getChainsData
+} from 'actions/Platform/joinPlatform.js'
 
 import {
+    Button,
     BackTop,
     Popover,
     Row,
@@ -35,7 +36,7 @@ import Assetslogo from 'images/assetslogo.png';
 import Block from 'images/block.png';
 import Nodes from 'images/nodes.png';
 
-class Platform extends React.Component {
+class JoinPlatform extends React.Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -110,19 +111,19 @@ class Platform extends React.Component {
     }
 
     getTableData = () => {
-        const data = this.props.homesData.txRecords;
-
-        data.map((item, index) => {
-            return item.key = JSON.stringify(index);
-        })
-
-
-        return data;
+        // const data = this.props.homesData.txRecords;
+        //
+        // data.map((item, index) => {
+        //     return item.key = JSON.stringify(index);
+        // })
+        //
+        //
+        // return data;
 
     }
 
     componentWillMount() {
-        this.props.getHomesData();
+        this.props.getChainsData();
         // var oRoot = document.getElementById('root');
         // var socket = io.connect("https://store.lianlianchains.com");
         // socket.on("chainDataUpdt", function(data) {
@@ -136,18 +137,18 @@ class Platform extends React.Component {
 
     }
 
+    getChainsData = () => {
+
+        return this.props.ChainsData
+    }
+
     render() {
 
-        const percent = Number((this.props.homesData.issuedAmt / this.props.homesData.totalAmt) * 100).toFixed(0) + "%";
-
-        const nowURTStyle = {
-            marginLeft: percent
-        }
 
         return (
             <div>
                 <Header />
-                <Content />
+                <Content chainsList={this.getChainsData()} />
                 <Footer />
                 <BackTop>
                     <div className="ant-back-top-inner">UP</div>
@@ -160,18 +161,19 @@ class Platform extends React.Component {
 }
 
 function mapStateToProps(state) {
+
     return {
-        homesData: state.homesData
+        ChainsData: state.chainsList
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getHomesData: bindActionCreators(getHomesData, dispatch)
+        getChainsData: bindActionCreators(getChainsData, dispatch)
     }
 }
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Platform)
+)(JoinPlatform)

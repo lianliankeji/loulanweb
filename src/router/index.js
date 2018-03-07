@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    BrowserRouter,
+    HashRouter as Router,
     Route,
     Link,
     Redirect,
@@ -11,17 +11,19 @@ import {
 
 import App from 'containers/'
 import Platform from 'containers/Platform/'
+import JoinPlatform from 'containers/JoinPlatform'
 
 console.log(App)
 
 const RouterMap = () => (
-    <BrowserRouter>
+    <Router>
         <Switch>
             <Route exact path='/' component={App} />
             <Route exact path='/home' component={App} />
             <Route exact path='/platform' component={Platform} />
+            <Route exact path='/platform/join' component={JoinPlatform} />
         </Switch>
-    </BrowserRouter>
+    </Router>
 )
 
 

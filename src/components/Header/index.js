@@ -10,7 +10,7 @@ import {
     Progress
 } from 'antd';
 import {
-    BrowserRouter,
+    HashRouter as Router,
     Route,
     Link,
     Redirect,
@@ -55,7 +55,7 @@ class Header extends Component {
                             
                             "移动端"
                             :
-                            <BrowserRouter>
+                            <Router>
                                 <ul className="header-nav">
                                     <li><Link to="/platform">
                                         开放平台
@@ -64,7 +64,7 @@ class Header extends Component {
                                     <li className="header-nav-item" title="Digital Assets"><a href="#assets">联盟链</a></li>
                                     <li className="header-nav-item" title="Contact"><a href="#contact">联系我们</a></li>
                                 </ul>
-                            </BrowserRouter>
+                            </Router>
                         }
 
                         

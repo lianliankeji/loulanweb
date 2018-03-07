@@ -22,6 +22,13 @@ module.exports = merge(baseWebpackConfig, {
         port: 8080, //端口号
         inline: true,
         progress: true,
+        proxy: {
+            '*': {
+                target: 'https://loulan.lianlianchains.com/',
+                changeOrigin: true,
+                secure: true
+            }
+        },
         disableHostCheck: true //新版的webpack-dev-server出于安全考虑，默认检查hostname，如果hostname不是配置内的，将中断访问
     },
 
