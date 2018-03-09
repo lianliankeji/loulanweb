@@ -96,7 +96,6 @@ const httpServer = (opts, data) => {
     let promise = new Promise(function (resolve, reject) {
         axios(httpDefaultOpts).then(
             (res) => {
-                console.log(res)
                 // successState(res)
                 resolve(res)
             }

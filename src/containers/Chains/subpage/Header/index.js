@@ -1,7 +1,7 @@
-import React, {
-    Component
-} from 'react';
+import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import createHistory from 'history/createHashHistory'
+const history = createHistory();
 
 import {
     Anchor,
@@ -45,7 +45,7 @@ class Header extends Component {
     }
 
     Gohome = () => {
-        location.replace("/")
+        history.replace('/')
     }
 
     render() {

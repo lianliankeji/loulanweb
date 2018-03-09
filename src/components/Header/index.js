@@ -9,10 +9,11 @@ import {
     Col,
     Progress
 } from 'antd';
+const { Link } = Anchor;
 import {
     HashRouter as Router,
     Route,
-    Link,
+    Link as LinkUrl,
     Redirect,
     Switch
 } from 'react-router-dom'
@@ -57,12 +58,12 @@ class Header extends Component {
                             :
                             <Router>
                                 <ul className="header-nav">
-                                    <li><Link to="/platform">
+                                    <li className="header-nav-item"><LinkUrl className="link" to="/platform">
                                         开放平台
-                                    </Link></li>
-                                    <li className="header-nav-item" title="Whitepaper"><a href="/static/URT-Whitepaper.pdf">白皮书</a></li>
-                                    <li className="header-nav-item" title="Digital Assets"><a href="#assets">联盟链</a></li>
-                                    <li className="header-nav-item" title="Contact"><a href="#contact">联系我们</a></li>
+                                    </LinkUrl></li>
+                                    <li className="header-nav-item" title="Whitepaper"><a className="link" href="/static/URT-Whitepaper.pdf">白皮书</a></li>
+                                    <li className="header-nav-item" title="Digital Assets"><Anchor affix={false}><Link className="link" href="#assets" title="联盟链" /></Anchor></li>
+                                    <li className="header-nav-item" title="Contact"><Anchor affix={false}><Link className="link" href="#contact" title="联系我们" /></Anchor></li>
                                 </ul>
                             </Router>
                         }

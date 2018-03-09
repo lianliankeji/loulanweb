@@ -20,7 +20,7 @@ import {
 import './style.scss';
 
 
-import Headerlogo from 'images/headerlogo.png';
+import Headerlogo from 'images/headerlogo2.png';
 import Logo from 'images/logo.png';
 
 
@@ -44,12 +44,16 @@ class Header extends Component {
         this.props.logFn();
     }
 
+    Gohome = () => {
+        location.replace("/")
+    }
+
     render() {
         return (
             <header className="platform-header">
                 <Row type="flex" justify="center" className="header-content">
                     <Col className="top" span={16}>
-                        <img src={Headerlogo} alt="logo" />
+                        <img src={Headerlogo} alt="logo" onClick={this.Gohome} />
                         {
                             window.screen.width < 768 ?
 
@@ -57,8 +61,8 @@ class Header extends Component {
                                 :
                                 <Router>
                                     <ul className="header-nav">
-                                        <li><Link to="/">首页</Link></li>
-                                        <li><Link to="/platform">开放平台</Link></li>
+                                        <li className="header-nav-item"><Link className="link" to="/">首页</Link></li>
+                                        <li className="header-nav-item"><Link className="link" to="/platform">开放平台</Link></li>
                                     </ul>
                                 </Router>
                         }

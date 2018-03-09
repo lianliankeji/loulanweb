@@ -26,7 +26,7 @@ import Header from './subpage/Header/index.js'
 import Content from './subpage/Content/';
 import Loading from "components/Loading/index.js"
 import Tables from 'components/Home/Tables/index.js'
-import Footer from 'components/Home/Footer/index.js'
+import Footer from 'components/Platform/Footer/index.js'
 
 import OpenLogo from 'images/open.png';
 import SafeLogo from 'images/safe.png';

@@ -9,19 +9,20 @@ import {
 
 //Switch: 只渲染命中的第一个route
 
-import App from 'containers/'
+import Home from 'containers/'
 import Platform from 'containers/Platform/'
-import JoinPlatform from 'containers/JoinPlatform'
+import JoinPlatform from 'containers/JoinPlatform/'
+import Chains from 'containers/Chains/'
 
-console.log(App)
 
 const RouterMap = () => (
     <Router>
         <Switch>
-            <Route exact path='/' component={App} />
-            <Route exact path='/home' component={App} />
+            <Route exact path='/' component={Home} />
+            <Route exact path='/home' component={Home} />
             <Route exact path='/platform' component={Platform} />
             <Route exact path='/platform/join' component={JoinPlatform} />
+            <Route exact path='/platform/join/release/:id' component={Chains} />
         </Switch>
     </Router>
 )

@@ -1,21 +1,13 @@
 @import '../../../../common/css/mixins.scss';
 
-.platform-header{
-  padding-bottom: 90px;
-  background-image: url("../../../../images/openbg.png");
+.join-platform-header{
 
   .header-content{
-    //background-color: #202227;
-  }
-
-  .slogen{
-    color: #fff;
-    text-align: center;
-    font-size: 24px;
-    margin-top: 70px;
+    background-color: #202227;
   }
   .top{
-    padding-top: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     @include flex;
 
     .header-nav{
@@ -46,3 +38,4 @@
     text-align: center;
   }
 }
+

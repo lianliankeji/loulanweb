@@ -37,7 +37,7 @@ import Assetslogo from 'images/assetslogo.png';
 import Block from 'images/block.png';
 import Nodes from 'images/nodes.png';
 
-class JoinPlatform extends React.Component {
+class Chains extends React.Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -111,18 +111,17 @@ class JoinPlatform extends React.Component {
 
     }
 
-    // getTableData = () => {
-    //     const data = this.props.ChainsData.data;
-    //
-    //     data.map((item, index) => {
-    //         return item.key = JSON.stringify(index);
-    //     });
-    //
-    //     console.log(data)
-    //
-    //     return data;
-    //
-    // }
+    getTableData = () => {
+        // const data = this.props.homesData.txRecords;
+        //
+        // data.map((item, index) => {
+        //     return item.key = JSON.stringify(index);
+        // })
+        //
+        //
+        // return data;
+
+    }
 
     componentWillMount() {
         this.props.getChainsData();
@@ -136,7 +135,7 @@ class JoinPlatform extends React.Component {
     }
 
     componentDidMount() {
-
+        console.log(this.props.match.params.id)
     }
 
     getChainsData = () => {
@@ -155,7 +154,7 @@ class JoinPlatform extends React.Component {
 
             return item
         })
-        this.props.showChainsTable({data: payload, id: id})
+        this.props.showChainsTable(payload)
     }
 
     render() {
@@ -193,4 +192,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(JoinPlatform)
+)(Chains)

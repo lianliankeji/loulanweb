@@ -1,7 +1,7 @@
-.join-platform-content{
+.chains-content{
   background-color: #fff;
   padding-top: 40px;
-  padding-bottom: 140px;
+  padding-bottom: 340px;
 
   .BreadcrumbItem:hover{
     color: #c93113;
@@ -11,6 +11,7 @@
     text-align: center;
     font-size: 24px;
     color: #333333;
+    margin-top: 20px;
     position: relative;
 
     &:after{
@@ -61,28 +62,60 @@
         margin-top: 20px;
         font-size: 14px;
         color: #c93113;
-        user-select: none;
-      }
-    }
-
-    .button{
-      color: #c93113;
-      background-color: #fff;
-      border-color: #c93113;
-
-      &:hover,&:visited{
-        opacity: 0.6;
-      }
-
-      &:active{
-        color: #fff;
-        background-color: #c93113;
-        border-color: #c93113;
       }
     }
   }
 
   .tables-data{
     padding: 30px 0;
+  }
+
+  .chains-intent{
+    margin-top: 65px;
+  }
+
+  .chains-intent-item{
+    height: 160px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 38px 20px 0 20px;
+
+    .img{
+      margin-right: 20px;
+    }
+
+    &:nth-of-type(1){
+      background-color: #FCF3F2;
+      border:1px #FCF3F2 solid;
+      border-radius: 6px;
+
+      .img{
+        width: 50px;
+        height:54px;
+      }
+    }
+
+    &:nth-of-type(2){
+      border:1px #f4d3cd solid;
+      border-radius: 6px;
+
+      .img{
+        width: 50px;
+        height:51px;
+      }
+    }
+
+    .name{
+      font-size: 30px;
+      color: #333333;
+    }
+
+    .intro{
+      font-size: 16px;
+      margin-top: 30px;
+      line-height: 1.5;
+      //line-height: 50px;
+    }
   }
 }

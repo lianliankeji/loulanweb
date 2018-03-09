@@ -25,22 +25,37 @@
         background-color: #c93113;
         border-color: #c93113;
 
-        &:hover,&:visited{
+        &:hover{
+          opacity: 0.7;
+        }
+
+        &:active{
           color: #c93113;
           background-color: #fff;
           border-color: #c93113;
         }
+
+      }
+
+      &:not(.join):hover{
+        color: #c93113;
+        background-color: #fff;
+        border-color: #c93113;
+      }
+
+      &:not(.join):active{
+        background-color: #c93113;
+        border-color: #c93113;
+        color: #fff;
+      }
+
+      &:not(.join):visited,&:not(.join):focus{
+        color: #c93113 !important;
+        background-color: #fff;
+        border-color: #c93113 !important;
       }
     }
 
-    .ant-btn:hover, .ant-btn:focus, .ant-btn:active, .ant-btn.active {
-      background: #fff;
-    }
-    .ant-btn:hover, .ant-btn:focus {
-      color: #c93113;
-      background-color: #fff;
-      border-color: #c93113;
-    }
   }
 
 }
