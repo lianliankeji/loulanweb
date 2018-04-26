@@ -47,7 +47,7 @@ class Header extends Component {
 				<div className="content">
 					<img className="headerlogo" src={Headerlogo} />
 					<p className="slogan">统一零售贸易平台与价值交换网络</p>
-					<div className="button"><a href="/static/URT-Whitepaper.pdf">白皮书</a></div>
+					{/*<div className="button"><a href="/static/URT-Whitepaper.pdf">白皮书</a></div>*/}
 				</div>
             </header>
 

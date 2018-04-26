@@ -35,7 +35,7 @@ module.exports = merge(baseWebpackConfig, {
             sourceMap: true
         }),
         new htmlWebpackPlugin({
-            title: "楼兰loulanchains",
+            title: "楼兰",
             filename: config.build.index,
             template: 'index.html',
             inject: true,

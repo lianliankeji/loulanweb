@@ -44,8 +44,9 @@ export default class FooterMobile extends React.Component {
                 <div className="line"></div>
                 <section className="item attention">
                 <h3 className="title">关注我们</h3>
-                <div className="code">
+                <div className="code" style={{position: "relative"}}>
                     <img className="QRcode" src={Qrcode} />
+                    <a className="Whitepaper" href="/static/URT-Whitepaper.pdf">白皮书</a>
                 </div>
                 </section>   
             </footer>

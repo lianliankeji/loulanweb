@@ -147,7 +147,7 @@ class HomeMobile extends React.Component {
 	}
 
 	componentDidMount() {
-
+		window.scrollTo(0,window.screen.height)
 	}
 
 	render() {
@@ -165,7 +165,7 @@ class HomeMobile extends React.Component {
 		};
 
 		return (
-			<div>
+			<div id="app">
 				<HeaderMobile />
 				<section className="alliance-chain-mobile">
 					<header className="title">国内首条新零售业务联盟链</header>
